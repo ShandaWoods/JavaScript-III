@@ -12,79 +12,79 @@
 // Principle 1
 
 // code example for Window Binding
-let sayLocation = function(){
-    'use strict';
-    console.log(this.location);
-};
-let me = {
-    location: 'Brooklyn'
-};
-sayLocation(); 
+// let sayLocation = function(){
+//     'use strict';
+//     console.log(this.location);
+// };
+// let me = {
+//     location: 'Brooklyn'
+// };
+// sayLocation(); 
 
-// Principle 2
+// // Principle 2
 
-// code example for Implicit Binding
-var Human = function(name, location){
-    return {
-        name: name,
-        location: location,
-        sayLocation: function(){
-            console.log(this.location);
-        }
-    }; 
-};
-let shanda = Human('Shanda','Brooklyn');
-shanda.sayLocation();  
+// // code example for Implicit Binding
+// var Human = function(name, location){
+//     return {
+//         name: name,
+//         location: location,
+//         sayLocation: function(){
+//             console.log(this.location);
+//         }
+//     }; 
+// };
+// let shanda = Human('Shanda','Brooklyn');
+// shanda.sayLocation();  
 
-// // Principle 3
+// // // Principle 3
 
-// // code example for New Binding
-function Creature(saying){
-    this.phrase = saying;
-}
+// // // code example for New Binding
+// function Creature(saying){
+//     this.phrase = saying;
+// }
 
-let shadowFax = new Creature('Shadowfax is the Lord of All Horses 🧙🏻‍♂️');
+// let shadowFax = new Creature('Shadowfax is the Lord of All Horses 🧙🏻‍♂️');
 
-console.log(shadowFax.phrase);
+// console.log(shadowFax.phrase);
 
-// Principle 4
+// // Principle 4
 
-// code example for Explicit Binding
-// .call ex:
-var sayName = function(){
-    console.log('My name is ' + this.name);
-};
+// // code example for Explicit Binding
+// // .call ex:
+// var sayName = function(){
+//     console.log('My name is ' + this.name);
+// };
 
-let frodo ={
-    name: 'Frodo',
-    age: 33
-};
-sayName.call(frodo);
+// let frodo ={
+//     name: 'Frodo',
+//     age: 33
+// };
+// sayName.call(frodo);
 
-// .apply ex:
-var sayName = function(lang1, _lang2, _lang3){
-    console.log('My name is ' + this.name + ' ' + 'and I know ' + lang1);
-};
+// // .apply ex:
+// var sayName = function(lang1, _lang2, _lang3){
+//     console.log('My name is ' + this.name + ' ' + 'and I know ' + lang1);
+// };
 
-let frodo ={
-    name: 'Frodo',
-    age: 33
-};
-let languages = ['Elvish', 'Entish', 'Common Speech'];
+// let frodo ={
+//     name: 'Frodo',
+//     age: 33
+// };
+// let languages = ['Elvish', 'Entish', 'Common Speech'];
 
-sayName.apply(frodo, languages);
+// sayName.apply(frodo, languages);
 
-// .bind ex:
-var sayName = function(lang1, _lang2, _lang3){
-    console.log('My name is ' + this.name + ' ' + 'and I know ' + lang1);
-};
+// // .bind ex:
+// var sayName = function(lang1, _lang2, _lang3){
+//     console.log('My name is ' + this.name + ' ' + 'and I know ' + lang1);
+// };
 
-let frodo ={
-    name: 'Frodo',
-    age: 33
-};
-let languages = ['Elvish', 'Entish', 'Common Speech'];
-let newFn = sayName.bind(frodo, languages[0], languages[2]);
-console.log('NEW FUNCTION FOR BIND');
-newFn(); 
+// let frodo ={
+//     name: 'Frodo',
+//     age: 33
+// };
+// let languages = ['Elvish', 'Entish', 'Common Speech'];
+// let newFn = sayName.bind(frodo, languages[0], languages[2]);
+// console.log('NEW FUNCTION FOR BIND');
+// newFn(); 
 
